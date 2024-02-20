@@ -12,6 +12,7 @@ Git Repository URL: https://github.com/Kelsey20/ITMD442_Lab2
 **Project Description** - This project allows users to look at contact information, insert, edit, and delete contact information. Users are able to input the first name, last name, an email address, and a note to create a contact(first,last name are the required filed, cannt be empty!). The contact ID will be automatically generated as the unique auothorized key. When user open/click any record, site will generate current local time, these two filed only present on 'contact page'
 
 **Development Environment** 
+
 1: MacBook Air Apple M2 
 
 2: Node JS version v20.5.1 
