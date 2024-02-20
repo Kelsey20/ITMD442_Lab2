@@ -44,7 +44,7 @@ router.post('/add', function(req, res, next) {
     //implement the console log at backend
   });
 
-  /* GET single user contact. */
+/* GET single user contact. */
 router.get('/:uuid', function(req, res, next) {
     const contact = contactsRepo.findById(req.params.uuid);
     const currentTime = new Date(); // Get the current time
@@ -62,13 +62,13 @@ router.get('/:uuid', function(req, res, next) {
     }
 });
 
-  /* GET contact delete method*/
+/* GET contact delete method*/
 router.get('/:uuid/delete', function(req, res, next) {
     const contact = contactsRepo.findById(req.params.uuid);
     res.render('contacts_delete', { title: 'Delete Your Contact Information', contact: contact} );
   });
 
-   /* POSt contact delete method*/
+/* POSt contact delete method*/
 router.post('/:uuid/delete', function(req, res, next) {
     //delete from repo
     contactsRepo.deleteById(req.params.uuid);
@@ -76,14 +76,14 @@ router.post('/:uuid/delete', function(req, res, next) {
   });
 
 
-  /* GET contacts edi method */
+/* GET contacts edi method */
 router.get('/:uuid/edit', function(req, res, next) {
     const contact = contactsRepo.findById(req.params.uuid);
     res.render('contacts_edit', { title: 'Edit Contact', contact: contact} );
   });
   
 
-  /* POST users add . */
+/* POST users add . */
 router.post('/:uuid/edit', function(req, res, next) {
     //console.log(req.body);
     if (req.body.firstName.trim() === '' || req.body.lastName.trim() === '') {
@@ -99,7 +99,6 @@ router.post('/:uuid/edit', function(req, res, next) {
             lastName: req.body.lastName.trim(), 
             email: req.body.email, 
             notes: req.body.notes ,
-            
         };
     contactsRepo.update(updatedContact);
     //contactsRepo.create({text:req.body.contactText.trim()});
@@ -107,9 +106,5 @@ router.post('/:uuid/edit', function(req, res, next) {
     }
     //implement the console log at backend
   });
-
-  
-
-  
 
 module.exports = router;
