@@ -26,7 +26,7 @@ const repo = {
     findAll: () => Array.from(db.values()),
     findById: (uuid) => db.get(uuid),
     create: (contact) => {
-        
+        const createTime = new Date();
         const newContact = {
             id: crypto.randomUUID(),
             firstName: contact.firstName,
